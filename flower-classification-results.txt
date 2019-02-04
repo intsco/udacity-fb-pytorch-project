@@ -1,0 +1,73 @@
+fastai
+
+Resnet32, 5+5 epochs, 64 bs, lr=0.02
+epoch	train_loss	valid_loss	accuracy
+5	    0.059245	0.104859	0.977995
+
+
+Resnet152, 5+5 epochs, 32 bs, lr=0.01
+epoch	train_loss	valid_loss	accuracy
+5	    0.036988	0.105719	0.986553
+
+Densenet121, 5+5 epochs, 32 bs, lr=0.02
+epoch	train_loss	valid_loss	accuracy
+5	    0.046098	0.097080	0.981663
+
+
+pytorch
+
+0.25 subset
+
+resnet34, 15 epochs, lr=0.01/0.001 StepRL schedule 5, basic affine transforms, 45 deg rot
+Best val Loss: 0.429578, Best val Acc: 0.891198
+Best val Loss: 0.354743, Best val Acc: 0.922983
+
+full dataset
+
+resnet34, 15 epochs
+Best val Acc: 0.863081
+Best val Acc: 0.900978
+
+resnet34, 15 epochs, lr=0.01/0.001 StepRL schedule 5, basic affine transforms, 45 deg rot
+Best val Loss: 0.248217, Best val Acc: 0.941320
+Best val Loss: 0.131558, Best val Acc: 0.974328
+
+resnet34, 15 epochs, 1cycle + other tricks from fastai, basic affine transforms, 45 deg rot
+Best val Loss: 0.246839, Best val Acc: 0.943765
+Best val Loss: 0.093415, Best val Acc: 0.982885
+
+resnet34, 15 epochs, 1cycle + other tricks from fastai, AdamW wd=0.01/0.1, basic affine transforms, 45 deg rot
+Best val Loss: 0.230131, Best val Acc: 0.948655
+Best val Loss: 0.078676, Best val Acc: 0.987775
+
+resnet34, 15 epochs, 1cycle lr=1e-2/3e-4 + other tricks from fastai, AdamW wd=0.01/0.01, basic affine transforms, 45 deg rot, 10xTTA
+Best val Loss: 0.138446, Best val Acc: 0.965770
+Best val Loss: 0.068852, Best val Acc: 0.987775
+
+resnet101, 15 epochs, bs 48/64, 1cycle lr=3e-3/7e-5 + other tricks from fastai, AdamW wd=5e-2/2e-4, basic affine transforms, 45 deg rot, 10xTTA
+Best val Loss: 0.111695, Best val Acc: 0.968215
+Best val Loss: 0.054569, Best val Acc: 0.992665
+
+resnet152, 15 epochs, bs 48/64, 1cycle lr=3e-3/7e-5 + other tricks from fastai, AdamW wd=5e-2/2e-4, basic affine transforms, 45 deg rot, 10xTTA
+Best val Loss: 0.114294, Best val Acc: 0.976773
+Best val Loss: 0.069883, Best val Acc: 0.991443
+
+resnet34, 15 epochs, pretrain on 128, 1cycle lr=1e-2/3e-4/1e-2/1e-4 + other tricks from fastai, AdamW wd=0.01/0.01/0.01/0.1, basic affine transforms, 45 deg rot, 10xTTA
+Best val Loss: 0.193959, Best val Acc: 0.943765
+Best val Loss: 0.084297, Best val Acc: 0.982885
+Best val Loss: 0.093187, Best val Acc: 0.988998
+Best val Loss: 0.098492, Best val Acc: 0.990220
+
+5CV
+
+resnet50, 15 epochs, 1cycle lr=1e-2/1e-4 + other tricks from fastai, AdamW wd=0.01/0.1, basic affine transforms, 45 deg rot, 10xTTA
+mean_acc	    0.987042
+mean_acc_head	0.964303
+mean_loss	    0.082470
+mean_loss_head	0.147141
+
+resnet101, 15 epochs, bs 48/64, 1cycle + other tricks from fastai, lr=3e-3/7e-5, AdamW wd=5e-2/2e-4, basic affine transforms, 45 deg rot, 10xTTA
+mean_acc	    0.988467
+mean_acc_head	0.969335
+mean_loss	    0.059509
+mean_loss_head	0.127831
