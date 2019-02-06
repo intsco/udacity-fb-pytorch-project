@@ -1,6 +1,6 @@
 from functools import partial
 
-from fastai_tricks import *
+from flowers.fastai_tricks import *
 
 
 def tta(model, inputs):

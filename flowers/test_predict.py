@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from model import *
+from flowers.model import *
 
 
 def ensemble_predict_test(arch, device, test_dl, model_paths):
